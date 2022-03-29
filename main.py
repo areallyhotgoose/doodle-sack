@@ -48,11 +48,22 @@ class PlayerSprite(BaseSprite):
         self.rect.y = self.rect.y - self.y_velocity
         self.check_collision()
         self.y_velocity = max(self.y_velocity - 0.5, Config.MAX_GRAVITY)
+#update y position every loop
+  update y(y_pos)
+    def update y(y_pos)
+    jump(self):
 
-    def jump(self):
         if self.standing:
             self.y_velocity = 10
             self.standing = False
+            y_change = 0
+            if jump:
+                y_change -= y_velocity
+                jump= False
+        y_pos += y_change
+        y_change += gravity
+        return y_pos
+
 
     def handle_movement(self):
         keys = pygame.key.get_pressed()
@@ -90,7 +101,7 @@ class Config:
     BLUE = (0, 0, 255)
     FPS = 30
     TILE_SIZE = 32
-    MAX_GRAVITY = -3
+    MAX_GRAVITY = 1
 
 class Game:
     def __init__(self):
@@ -142,3 +153,7 @@ def main():
 
     pygame.quit()
     sys.exit()
+
+ 
+  
+  y=  update_player{y}
